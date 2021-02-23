@@ -1,40 +1,18 @@
 package com.hm.external.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Component
-@Entity
-@Table(name = "user")
- /**
- * Class that contains User details 
- *  */
 public class User {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "userId",nullable = false)
 	private int userId;
-	@NotNull
 	private String name;
-	@NotNull
 	private String password;
-	@NotNull
-	@Column(unique = true)
 	private String email;
-	@NotNull
 	private String contact;
-	@NotNull
 	private String address;
-	@NotNull
 	private String role;
 
 	public User() { 
@@ -50,8 +28,7 @@ public class User {
 	}
 
 
-	public User(@NotNull String name, @NotNull String password, @NotNull String email, @NotNull String contact,
-			@NotNull String address, @NotNull String role){
+	public User(String name,String password,String email,String contact,String address,String role){
 		super();
 		this.name = name;
 		this.password = password;
